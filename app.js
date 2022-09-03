@@ -60,7 +60,6 @@ const displyDetail = async(id) => {
     data.sort((a, d) => {
         return d.total_view - a.total_view;
     })
-    console.log(data)
     const careDetail = document.getElementById('card')
     careDetail.textContent = ''
     data.forEach(data => {
