@@ -111,9 +111,15 @@ const newsDetail = async(newsId) =>{
       </div>
       <div class="modal-body">
       <img src="${data ? data.image_url : 'Not Found image' }" alt="Not Found image" class="img-fluid rounded-start">
+      <div class="d-flex">
       <div class="d-flex align-items-center w-50 gap-2 mt-2">
         <img src="${data ? data.author.img : 'Not Found image'}" class="w-25 rounded-circle mr-2" alt="Not Found image">
         <h6 class="my-2">${data?.author?.name ? data.author.name : 'Not Found Name'}</h6>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <i class="fa-solid fa-eye ml-2"></i>
+        <p class="ml-2 m-auto">${data? data.total_view : 'Not Found View'}</p>
+      </div>
       </div>
       </div>
       <div class="modal-footer">
@@ -124,9 +130,3 @@ const newsDetail = async(newsId) =>{
     `
 }
 newsDetail()
-
-// const num = [20, 22, 5, 45, 15]
-// num.sort(function(a,b){
-//     return a - b
-// })
-// console.log(num)
