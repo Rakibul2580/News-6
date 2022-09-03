@@ -100,7 +100,6 @@ const displyDetail = async(id) => {
 
 const newsDetail = async(newsId) =>{
     const data = await modalData(newsId)
-    console.log(data)
     const modalDetail = document.getElementById('exampleModal')
     modalDetail.innerHTML = `
     <div class="modal-dialog">
