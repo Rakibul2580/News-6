@@ -118,7 +118,7 @@ const newsDetail = async(newsId) =>{
       </div>
       <div class="d-flex align-items-center gap-2">
         <i class="fa-solid fa-eye ml-2"></i>
-        <p class="ml-2 m-auto">${data? data.total_view : 'Not Found View'}</p>
+        <p class="ml-2 m-auto">${data?.total_view? data.total_view : 'Not Found View'}</p>
       </div>
       </div>
       </div>
