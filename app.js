@@ -95,6 +95,7 @@ const displyDetail = async(id) => {
         cardDetail.appendChild(div)
     })
     document.getElementById('spinner').classList.add('d-none')
+    document.getElementById('footer').classList.remove('d-none')
 }
 
 const newsDetail = async(newsId) =>{
