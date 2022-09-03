@@ -57,6 +57,10 @@ const displyDetail = async(id) => {
     }else{
         document.getElementById('items').innerText = `Now found for category Entertainment`
     }
+    data.sort((a, d) => {
+        return d.total_view - a.total_view;
+    })
+    console.log(data)
     const careDetail = document.getElementById('card')
     careDetail.textContent = ''
     data.forEach(data => {
@@ -107,14 +111,16 @@ const newsDetail = async(newsId) =>{
       </div>
       <div class="modal-body">
       <img src="${data ? data.image_url : 'Not Found image' }" alt="Not Found image" class="img-fluid rounded-start">
-      <div class="d-flex align-items-center w-50 gap-2">
+      <div class="d-flex align-items-center w-50 gap-2 mt-2">
         <img src="${data ? data.author.img : 'Not Found image'}" class="w-25 rounded-circle mr-2" alt="Not Found image">
         <h6 class="my-2">${data?.author?.name ? data.author.name : 'Not Found Name'}</h6>
+      </div>
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
-    </div>
+  </div>
     `
 }
 newsDetail()
