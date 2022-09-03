@@ -34,15 +34,15 @@ const modalData = async(id) =>{
 const displyNav = async() => {
     const data = await loadData()
     const nav = document.getElementById('nav-detail')
-    nav.innerHTML = `
-        <li><a class="nav-link px-4 mx-2" href="#">Home</a>
-    `
+    // nav.innerHTML = `
+    //     <li><a class="nav-link px-4 mx-2" href="#">Home</a>
+    // `
     data.forEach(data => {
         const {category_id, category_name} = data
         const li = document.createElement('li')
         li.classList.add('nav-item')
         li.innerHTML = `
-            <a onclick="displyDetail('${category_id}')" id="nav" class="nav-link px-4 mx-2" href="#">${category_name}</a>
+            <a onclick="displyDetail('${category_id}')" class="nav-link px-4 mx-2" href="#">${category_name}</a>
         `
         nav.appendChild(li)
     });
@@ -60,8 +60,8 @@ const displyDetail = async(id) => {
     data.sort((a, d) => {
         return d.total_view - a.total_view;
     })
-    const careDetail = document.getElementById('card')
-    careDetail.textContent = ''
+    const cardDetail = document.getElementById('card')
+    cardDetail.textContent = ''
     data.forEach(data => {
         const {image_url, title, details, author, total_view, _id} = data
         const {img, name} = author
@@ -92,7 +92,7 @@ const displyDetail = async(id) => {
               </div>
             </div>
         `
-        careDetail.appendChild(div)
+        cardDetail.appendChild(div)
     })
     document.getElementById('spinner').classList.add('d-none')
 }
