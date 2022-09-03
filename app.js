@@ -42,7 +42,7 @@ const displyNav = async() => {
         const li = document.createElement('li')
         li.classList.add('nav-item')
         li.innerHTML = `
-            <a onclick="displyDetail('${category_id}')" class="nav-link px-4 mx-2" href="#">${category_name}</a>
+            <a onclick="displyDetail('${category_id}')" class="nav-link px-4 mx-3" href="#">${category_name}</a>
         `
         nav.appendChild(li)
     });
